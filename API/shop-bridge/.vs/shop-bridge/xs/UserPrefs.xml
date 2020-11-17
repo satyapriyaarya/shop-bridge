@@ -1,0 +1,35 @@
+﻿<Properties StartupConfiguration="{B5693A64-BE26-4305-86D9-1CBA204302FE}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="shop-bridge/appsettings.json">
+    <Files>
+      <File FileName="shop-bridge/Models/DatabaseContext.cs" Line="5" Column="2" />
+      <File FileName="shop-bridge/Controllers/ProductsController.cs" Line="50" Column="35" />
+      <File FileName="shop-bridge/Startup.cs" />
+      <File FileName="shop-bridge/Models/Products.cs" />
+      <File FileName="shop-bridge/appsettings.json" Line="1" Column="1" />
+      <File FileName="shop-bridge/Program.cs" />
+      <File FileName="shop-bridge/Properties/launchSettings.json" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="shop-bridge" expanded="True">
+            <Node name="shop-bridge" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="appsettings.json" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.shop-bridge PreferredExecutionTarget="/Applications/Google Chrome.app" />
+</Properties>
