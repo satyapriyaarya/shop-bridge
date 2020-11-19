@@ -16,13 +16,14 @@ import axios from 'axios';
 // );
 
 const url = 'http://localhost:5001/api/';
-
+// const url = "https://shop-bride-api.azurewebsites.net/api/"
 export const AppServices = {
     GetProducts,
     GetProduct,
     AddProduct,
     EditProduct,
-    DeleteProduct
+    DeleteProduct,
+    UploadFile
 }
 
 function GetProducts() {
@@ -40,6 +41,7 @@ function AddProduct(name, description, price, image) {
         price: price,
         image: image
     };
+    console.log('SAVE:', data)
     return axios.post(`${url}products`, data);
 }
 
@@ -56,4 +58,12 @@ function EditProduct(id, name, description, price, image) {
 
 function DeleteProduct(id) {
     return axios.delete(`${url}products/${id}`);
+}
+
+function UploadFile(file, fileName) {
+    console.log('hehe:', file, fileName);
+    const fd = new FormData();
+    fd.append("formFile", file);
+    fd.append("fileName", fileName)
+    return axios.post(`${url}products/image`, fd);
 }

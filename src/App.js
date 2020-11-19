@@ -1,5 +1,6 @@
 
-import { Component, Fragment } from 'react';
+import React, { Component, Fragment } from 'react';
+import { Link } from 'react-router-dom'
 import './App.css';
 import { AppServices } from './app.services';
 
@@ -44,29 +45,39 @@ class App extends Component {
   handleOnChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
-  handleOnChangeFile = e => {
+  handleOnChangeFile = (e) => {
+
+    console.log('image:', e.target.files[0]);
+    // const fd = new FormData();
+    // fd.append('File', e.target.files[0], e.target.files[0].name);
+
     this.setState({
-      image: e.target.files[0]
+      image: e.target.files[0].name
     })
-    console.log(e.target.files[0]);
-    const fd = new FormData();
-    fd.append('File', e.target.files[0], e.target.files[0].name);
+
+    AppServices.UploadFile(e.target.files[0], e.target.files[0].name)
+      .then(result => {
+        // this.setState({
+        //   image: result.data
+        // })
+      })
 
   }
+
   AddProducts = () => {
     console.log(this.state.price)
     // e.preventDefault();
     this.setState({ valid: true });
     !this.isEmptyOrNull(this.state.name) ? this.setState({ classForName: 'form-control txt' }) : this.setState({ classForName: 'form-control txt required', valid: false })
-    !this.isEmptyOrNull(this.state.description) ? this.setState({ classForDesscription: 'form-control txt' }) : this.setState({ classForDesscription: 'form-control txt required', valid: false })
-    !this.isEmptyOrNull(this.state.price) ? this.setState({ classForPrice: 'form-control txt' }) : this.setState({ classForPrice: 'form-control txt required', valid: false })
+    // !this.isEmptyOrNull(this.state.description) ? this.setState({ classForDesscription: 'form-control txt' }) : this.setState({ classForDesscription: 'form-control txt required', valid: false })
+    // !this.isEmptyOrNull(this.state.price) ? this.setState({ classForPrice: 'form-control txt' }) : this.setState({ classForPrice: 'form-control txt required', valid: false })
     if (this.isEmptyOrNull(this.state.name) || this.isEmptyOrNull(this.state.description) || this.isEmptyOrNull(this.state.price)) {
       console.log('Invalid') //We can use bootstrap Toaste
     }
     else {
       var id = 0;
       if (this.state.editMode) {
-        id = this.state.products && this.state.products.length > 0 ? this.state.products.sort((x, y) => x - y)[this.state.products.length - 1]['id'] : 1;
+        id = this.state.products && this.state.products.length > 0 ? this.state.products.filter(x => x.id === this.state.id)[0]['id'] : 1;
         console.log('satya:', id);
         AppServices.EditProduct(id, this.state.name, this.state.description, parseFloat(this.state.price), this.state.image).then(result => {
           this.setState({
@@ -151,29 +162,31 @@ class App extends Component {
           <div className="row">
             <div className='col-sm-6'>
               <input name="name" className={this.state.classForName} maxLength="100" placeholder="Product name"
-                value={this.state.name} onChange={this.handleOnChange} />
+                value={this.state.name} onChange={(e) => this.handleOnChange(e)} />
             </div>
             <div className='col-sm-6'>
               <input type="number" name="price" className={this.state.classForPrice} placeholder="Price"
-                value={this.state.price} onChange={this.handleOnChange} />
+                value={this.state.price} onChange={(e) => this.handleOnChange(e)} />
             </div>
             <div className='col-sm-6'>
               <textarea name="description" className={this.state.classForDesscription} rows="5" maxLength="1000" placeholder="Desctiption"
-                value={this.state.description} onChange={this.handleOnChange} />
+                value={this.state.description} onChange={(e) => this.handleOnChange(e)} />
             </div>
             <div className='col-sm-6'>
               <input type="file" name="image" className="form-control txt" placeholder="Image"
-                value={this.state.image} onChange={this.handleOnChangeFile} />
+                onChange={(e) => this.handleOnChangeFile(e)} />
+              {/* value={this.state.image}  */}
+              {/* {this.state.image && <img alt="No file selected" src={this.state.image.name} />} */}
             </div>
           </div>
           <div className="row">
             {this.state.editMode ? (
               <Fragment>
-                <button name="edit" className='form-control btn primary-btn' onClick={this.AddProducts.bind(this)}>Update</button>
-                <button name="cancel" className='form-control btn primary-btn' onClick={this.cancel.bind(this)}>Cancel</button>
+                <button name="edit" className='form-control btn primary-btn' onClick={() => this.AddProducts()}>Update</button>
+                <button name="cancel" className='form-control btn primary-btn' onClick={() => this.cancel()}>Cancel</button>
               </Fragment>
             ) : (
-                <button name="add" className='form-control btn primary-btn' onClick={this.AddProducts.bind(this)}>Add</button>
+                <button name="add" className='form-control btn primary-btn' onClick={() => this.AddProducts()}>Add</button>
               )}
           </div>
 
@@ -184,24 +197,30 @@ class App extends Component {
             {this.state.products && this.state.products.length > 0 &&
               <div>
                 <div className='row'>
-                  <div className='col'><label>Product Name</label></div>
-                  <div className='col'><label>Description</label></div>
-                  <div className='col'><label>Price</label></div>
-                  <div className='col'><label>Image</label></div>
-                  <div className='col'><label>Action</label></div>
-                  <div className='col'><label></label></div>
+                  <div className='col-sm-1'><label>ID</label></div>
+                  <div className='col-sm-2'><label> Name</label></div>
+                  <div className='col-sm-3'><label>Description</label></div>
+                  <div className='col-sm-1'><label>Price</label></div>
+                  <div className='col-sm-2'><label>Image</label></div>
+                  <div className='col-sm-2'><label>Action</label></div>
+                  <div className='col-sm-1'><label></label></div>
                 </div>
                 {(this.state.products.map((x, key) => {
                   return <div className='row' key={key}>
-                    <div className='col'><label>{x.name}</label></div>
-                    <div className='col'><label>{x.description}</label></div>
-                    <div className='col'><label>{x.price}</label></div>
-                    <div className='col'><label>{x.image}</label></div>
-                    <div className='col'>
-                      <button name="edit" className="form-control btn" onClick={this.onEdit.bind(this, x.id)}>Edit</button>
+                    <div className='col-sm-1'><label>{x.id}</label></div>
+                    <div className='col-sm-2'>
+                      <Link to={`/product-detail/${x.id}`}>
+                        {x.name.slice(0, 50)} {x.name.length > 50 && " ..."}
+                      </Link>
                     </div>
-                    <div className='col'>
-                      <button name="delete" className="form-control btn" onClick={this.delete.bind(this, x.id)}>Delete</button>
+                    <div className='col-sm-3'><label>{x.description.slice(0, 100)} ...</label></div>
+                    <div className='col-sm-1'><label>{x.price.toFixed(2)}</label></div>
+                    <div className='col-sm-2'><img src={x.image ? `http://localhost:5001/images/${x.image}` : `http://localhost:5001/images/noimg.png`} alt="no " width="60px" /></div>
+                    <div className='col-sm-2'>
+                      <button name="edit" className="form-control btn" onClick={() => this.onEdit(x.id)}>Edit</button>
+                    </div>
+                    <div className='col-sm-1'>
+                      <button name="delete" className="form-control btn" onClick={() => this.delete(x.id)}>Delete</button>
                     </div>
                   </div>
                 }))}
@@ -210,7 +229,7 @@ class App extends Component {
 
           </div>
         </header>
-      </Fragment>
+      </Fragment >
     );
   }
 }

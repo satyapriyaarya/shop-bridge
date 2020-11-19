@@ -1,31 +1,42 @@
 ﻿<Properties StartupConfiguration="{B5693A64-BE26-4305-86D9-1CBA204302FE}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="shop-bridge/appsettings.json">
+  <MonoDevelop.Ide.Workbench ActiveDocument="shop-bridge/Properties/launchSettings.json">
     <Files>
-      <File FileName="shop-bridge/Models/DatabaseContext.cs" Line="5" Column="2" />
-      <File FileName="shop-bridge/Controllers/ProductsController.cs" Line="50" Column="35" />
-      <File FileName="shop-bridge/Startup.cs" />
+      <File FileName="shop-bridge/Controllers/ProductsController.cs" Line="76" Column="5" />
       <File FileName="shop-bridge/Models/Products.cs" />
-      <File FileName="shop-bridge/appsettings.json" Line="1" Column="1" />
-      <File FileName="shop-bridge/Program.cs" />
-      <File FileName="shop-bridge/Properties/launchSettings.json" />
+      <File FileName="shop-bridge/Models/DatabaseContext.cs" />
+      <File FileName="shop-bridge/Properties/launchSettings.json" Line="18" Column="8" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
+          <Option id="ShowAllFiles" value="True" />
           <Node name="shop-bridge" expanded="True">
             <Node name="shop-bridge" expanded="True">
-              <Node name="Dependencies" expanded="True" />
-              <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True" />
-              <Node name="Properties" expanded="True" />
-              <Node name="appsettings.json" selected="True" />
+              <Node name="Properties" expanded="True">
+                <Node name="launchSettings.json" selected="True" />
+              </Node>
             </Node>
+            <Node name="shop-bridge-xunit" expanded="True" />
           </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State>
+          <Value>Directory.GetCurrentDirectory()</Value>
+          <Value>data</Value>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="shop-bridge" selected="True" />
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <DisabledProjects>
+    <String>shop-bridge-xunit/shop-bridge-xunit.csproj</String>
+  </DisabledProjects>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

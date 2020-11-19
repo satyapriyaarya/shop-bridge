@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
@@ -42,8 +43,6 @@ namespace shop_bridge.Controllers
         }
 
         // PUT: api/Products/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
         public async Task<IActionResult> PutProducts(int id, Products products)
         {
@@ -74,8 +73,6 @@ namespace shop_bridge.Controllers
         }
 
         // POST: api/Products
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
         public async Task<ActionResult<Products>> PostProducts(Products products)
         {
@@ -105,5 +102,19 @@ namespace shop_bridge.Controllers
         {
             return _context.Products.Any(e => e.id == id);
         }
+
+        [HttpPost("image")]
+        public  ActionResult PostImage([FromForm]FileModel file)
+        {
+            Console.WriteLine("hi");
+            string path = Path.Combine(Directory.GetCurrentDirectory(),"images", file.FileName);
+            using(Stream stream = new FileStream(path, FileMode.Create))
+            {
+                file.FormFile.CopyTo(stream);
+            }
+            return Ok(file.FileName);
+        }
+
+
     }
 }

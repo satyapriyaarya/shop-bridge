@@ -8,6 +8,8 @@
 
   <ItemGroup>
     <Folder Include="Models\" />
+    <Folder Include="images\" />
+    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.9" />
