@@ -151,3 +151,8 @@
 /Users/satya/Documents/shop-bridge/API/shop-bridge/shop-bridge/obj/Release/netcoreapp3.1/shop-bridge.pdb
 /Users/satya/Documents/shop-bridge/API/shop-bridge/shop-bridge/obj/Release/netcoreapp3.1/shop-bridge.genruntimeconfig.cache
 /Users/satya/Documents/shop-bridge/API/shop-bridge/shop-bridge/obj/Release/netcoreapp3.1/shop-bridge.csprojAssemblyReference.cache
+/Users/satya/Documents/shop-bridge/API/shop-bridge/shop-bridge/bin/Release/netcoreapp3.1/images/noimg.png
+/Users/satya/Documents/shop-bridge/API/shop-bridge/shop-bridge/bin/Release/netcoreapp3.1/images/birthday.JPG
+/Users/satya/Documents/shop-bridge/API/shop-bridge/shop-bridge/bin/Release/netcoreapp3.1/images/second.jpg
+/Users/satya/Documents/shop-bridge/API/shop-bridge/shop-bridge/bin/Release/netcoreapp3.1/images/71zggz-oAyL._UL1500_.jpg
+/Users/satya/Documents/shop-bridge/API/shop-bridge/shop-bridge/bin/Release/netcoreapp3.1/images/first.jpg

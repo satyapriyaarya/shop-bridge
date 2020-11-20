@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import './App.css';
 import { AppServices } from './app.services';
 import { withRouter } from 'react-router';
+import { IMAGE_URL, URL } from './constants';
 
 class ProductDetail extends Component {
   constructor(props) {
@@ -54,7 +55,7 @@ class ProductDetail extends Component {
                 <div className='col'><label> Name: {this.state.product['name']}</label></div>
                 <div className='col'><label>Description: {this.state.product['description']}</label></div>
                 <div className='col'><label>Price: {this.state.product['price']}</label></div>
-                <div className='col'><label> <img src={this.state.product['image'] ? `http://localhost:5001/images/${this.state.product['image']}` : `http://localhost:5001/images/noimg.png`} alt="no " width="500px" /> </label></div>
+                <div className='col'><label> <img src={this.state.product['image'] ? `${IMAGE_URL}${this.state.product['image']}` : `${IMAGE_URL}noimg.png`} alt="no " width="500px" /> </label></div>
               </div>
             }
 

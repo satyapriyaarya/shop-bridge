@@ -1,22 +1,22 @@
 ﻿<Properties StartupConfiguration="{B5693A64-BE26-4305-86D9-1CBA204302FE}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="shop-bridge/Properties/launchSettings.json">
+  <MonoDevelop.Ide.Workbench ActiveDocument="shop-bridge/appsettings.json">
     <Files>
-      <File FileName="shop-bridge/Controllers/ProductsController.cs" Line="76" Column="5" />
-      <File FileName="shop-bridge/Models/Products.cs" />
-      <File FileName="shop-bridge/Models/DatabaseContext.cs" />
-      <File FileName="shop-bridge/Properties/launchSettings.json" Line="18" Column="8" />
+      <File FileName="shop-bridge/Models/Products.cs" Line="1" Column="1" />
+      <File FileName="shop-bridge/appsettings.json" Line="11" Column="75" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Option id="ShowAllFiles" value="True" />
           <Node name="shop-bridge" expanded="True">
-            <Node name="shop-bridge" expanded="True">
-              <Node name="Properties" expanded="True">
-                <Node name="launchSettings.json" selected="True" />
+            <Node name="shop-bridge" expanded="True" selected="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="FrameworkReferences" expanded="True" />
+                <Node name="PackageDependencies" expanded="True" />
               </Node>
+              <Node name="images" expanded="True" />
+              <Node name="Models" expanded="True" />
             </Node>
-            <Node name="shop-bridge-xunit" expanded="True" />
           </Node>
         </State>
       </Pad>
@@ -24,11 +24,6 @@
         <State>
           <Value>Directory.GetCurrentDirectory()</Value>
           <Value>data</Value>
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.UnitTesting.TestPad">
-        <State name="__root__">
-          <Node name="shop-bridge" selected="True" />
         </State>
       </Pad>
     </Pads>

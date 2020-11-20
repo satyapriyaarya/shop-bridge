@@ -3,6 +3,7 @@ import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom'
 import './App.css';
 import { AppServices } from './app.services';
+import { IMAGE_URL } from './constants';
 
 class App extends Component {
   constructor(props) {
@@ -215,7 +216,7 @@ class App extends Component {
                     </div>
                     <div className='col-sm-3'><label>{x.description.slice(0, 100)} ...</label></div>
                     <div className='col-sm-1'><label>{x.price.toFixed(2)}</label></div>
-                    <div className='col-sm-2'><img src={x.image ? `http://localhost:5001/images/${x.image}` : `http://localhost:5001/images/noimg.png`} alt="no " width="60px" /></div>
+                    <div className='col-sm-2'><img src={x.image ? `${IMAGE_URL}${x.image}` : `${IMAGE_URL}noimg.png`} alt="no " width="60px" /></div>
                     <div className='col-sm-2'>
                       <button name="edit" className="form-control btn" onClick={() => this.onEdit(x.id)}>Edit</button>
                     </div>

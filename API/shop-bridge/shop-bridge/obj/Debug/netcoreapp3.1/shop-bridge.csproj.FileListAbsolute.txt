@@ -1,6 +1,11 @@
 /Users/satya/Documents/shop-bridge/API/shop-bridge/shop-bridge/bin/Debug/netcoreapp3.1/appsettings.Development.json
 /Users/satya/Documents/shop-bridge/API/shop-bridge/shop-bridge/bin/Debug/netcoreapp3.1/appsettings.json
 /Users/satya/Documents/shop-bridge/API/shop-bridge/shop-bridge/bin/Debug/netcoreapp3.1/Properties/launchSettings.json
+/Users/satya/Documents/shop-bridge/API/shop-bridge/shop-bridge/bin/Debug/netcoreapp3.1/images/noimg.png
+/Users/satya/Documents/shop-bridge/API/shop-bridge/shop-bridge/bin/Debug/netcoreapp3.1/images/birthday.JPG
+/Users/satya/Documents/shop-bridge/API/shop-bridge/shop-bridge/bin/Debug/netcoreapp3.1/images/second.jpg
+/Users/satya/Documents/shop-bridge/API/shop-bridge/shop-bridge/bin/Debug/netcoreapp3.1/images/71zggz-oAyL._UL1500_.jpg
+/Users/satya/Documents/shop-bridge/API/shop-bridge/shop-bridge/bin/Debug/netcoreapp3.1/images/first.jpg
 /Users/satya/Documents/shop-bridge/API/shop-bridge/shop-bridge/bin/Debug/netcoreapp3.1/shop-bridge.deps.json
 /Users/satya/Documents/shop-bridge/API/shop-bridge/shop-bridge/bin/Debug/netcoreapp3.1/shop-bridge.runtimeconfig.json
 /Users/satya/Documents/shop-bridge/API/shop-bridge/shop-bridge/bin/Debug/netcoreapp3.1/shop-bridge.runtimeconfig.dev.json

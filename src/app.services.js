@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+import { URL } from './constants'
 // Username: OpkohjbmHm
 // Database name: OpkohjbmHm
 // Password: IkomctmmV2
@@ -15,8 +15,8 @@ import axios from 'axios';
 //     PRIMARY KEY (Id)
 // );
 
-const url = 'http://localhost:5001/api/';
-// const url = "https://shop-bride-api.azurewebsites.net/api/"
+
+
 export const AppServices = {
     GetProducts,
     GetProduct,
@@ -27,11 +27,11 @@ export const AppServices = {
 }
 
 function GetProducts() {
-    return axios.get(`${url}products`);
+    return axios.get(`${URL}products`);
 }
 
 function GetProduct(id) {
-    return axios.get(`${url}products/${id}`)
+    return axios.get(`${URL}products/${id}`)
 }
 
 function AddProduct(name, description, price, image) {
@@ -42,7 +42,7 @@ function AddProduct(name, description, price, image) {
         image: image
     };
     console.log('SAVE:', data)
-    return axios.post(`${url}products`, data);
+    return axios.post(`${URL}products`, data);
 }
 
 function EditProduct(id, name, description, price, image) {
@@ -53,11 +53,11 @@ function EditProduct(id, name, description, price, image) {
         price: price,
         image: image
     };
-    return axios.put(`${url}products/${id}`, data);
+    return axios.put(`${URL}products/${id}`, data);
 }
 
 function DeleteProduct(id) {
-    return axios.delete(`${url}products/${id}`);
+    return axios.delete(`${URL}products/${id}`);
 }
 
 function UploadFile(file, fileName) {
@@ -65,5 +65,5 @@ function UploadFile(file, fileName) {
     const fd = new FormData();
     fd.append("formFile", file);
     fd.append("fileName", fileName)
-    return axios.post(`${url}products/image`, fd);
+    return axios.post(`${URL}products/image`, fd);
 }
